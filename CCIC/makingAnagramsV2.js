@@ -1,10 +1,6 @@
 /*
 A variant of makingAnagrams program.
 The old program has a worst case O(N^2).
-Comparison of performance:
->> Old: Call to main() took 731.8800000001211 milliseconds.
->> Variant: Call to main() took 87.8949999997858 milliseconds.
-Result of 9x improvement in runtime when n = 10^4
 */
 
 function main(str1, str2) {
@@ -51,11 +47,4 @@ var randomString = function (len, bits)
     return outStr;
 };
 
-main("zcdez", "abzc"); // anagram = "cz", ans = 5 - 2 + 4 -2 = 5
-
-randomString(100000); // 200 alphanumeric characters
-var t0 = performance.now();
-main(randomString(100000), randomString(100000));
-var t1 = performance.now();
-
-console.log("Call to main() took " + (t1 - t0) + " milliseconds.");
+module.exports = {main};
